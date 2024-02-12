@@ -73,6 +73,7 @@ function secMenu {
 	[U]sers with a UID of 0
 	[L]ast 10 logged in users
 	[C]urrently logged in users
+	[B]lock list menu
 	[E]xit"
 	read -p "Please enter your choice: " choice
 	
@@ -93,6 +94,34 @@ function secMenu {
     	w
     	sleep 2
     	;;
+    	B|b)
+	    	echo "
+		[C]isco blocklist generator
+		[D]omain URL blocklist generator
+		[M]ac OSX blocklist generator
+		[F]irewall (Windows) blocklist generator
+		[I]Ptables blocklist generator
+		[E]xit
+		[B]ack to main menu"
+		read -p "Please enter a choice" choice
+		case "${choice}" in
+		C|c) bash parse-threat.bash -c
+		;;
+		D|d) bash parse-threat.bash -d
+		;;
+		M|m) bash parse-threat.bash -m
+		;;
+		F|f) bash parse-threat.bash -f
+		;;
+		I|i) bash parse-threat.bash -i
+		;;
+		E|e) exit 1
+		;;
+		B|b) menu
+		;;
+		esac
+	;;
+
     	*)
         	invalidO
     	;;
