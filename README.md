@@ -1,2 +1,2 @@
 # Automation-and-Scripting
-My bash and powershell scripts for automation or as command line tools 
+My bash and powershell scripts used for automation or as command line tools 
